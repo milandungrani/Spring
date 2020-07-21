@@ -1,16 +1,18 @@
 package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 public class User {
-    private int id;
-    private final String name;
-    private final String username;
-    private final String email;
-    private final UserAddress address;
-    private final String phone;
-    private final String website;
-    private final UserCompany company;
+    @Getter @Setter private int id;
+    @Getter private final String name;
+    @Getter private final String username;
+    @Getter private final String email;
+    @Getter private final UserAddress address;
+    @Getter private final String phone;
+    @Getter private final String website;
+    @Getter private final UserCompany company;
 
     public User(@JsonProperty("id") int id, 
                 @JsonProperty("name") String name,
@@ -29,40 +31,5 @@ public class User {
         this.website = website;
         this.company = company;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public UserAddress getAddress() {
-        return address;
-    }
     
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public UserCompany getCompany() {
-        return company;
-    }
 }

@@ -1,11 +1,12 @@
 package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 
 public class UserCompany {
-    private final String name;
-    private final String catchPhrase;
-    private final String bs;
+    @Getter private final String name;
+    @Getter private final String catchPhrase;
+    @Getter private final String bs;
 
     public UserCompany(@JsonProperty("name") String name,
                        @JsonProperty("catchPhrase") String catchPhrase,
@@ -15,15 +16,4 @@ public class UserCompany {
         this.bs = bs;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getCatchPhrase() {
-        return catchPhrase;
-    }
-
-    public String getBs() {
-        return bs;
-    }
 }
